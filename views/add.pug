@@ -1,0 +1,20 @@
+extends layout
+block content
+    p New Pizza
+
+
+        form(action='/pizza/add1' method='POST')
+            label Nom Pizza :
+            input.form-control(type='text' name='DesignPizz')
+
+            label Prix :
+            input.form-control(type='text' name='TarifPizz')
+            br
+            button.btn.btn-primary(type='submit') Ajouter
+            br
+
+
+
+
+
+

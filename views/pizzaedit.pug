@@ -1,0 +1,27 @@
+extends layout
+
+block content
+    h1 modif
+
+
+        each pizza in tablopizza
+
+            form( action="/pizza/update/" + pizza.NroPizz method="POST" )
+                label Index:
+                p designation de la pizza : #{pizza.DesignPizz}
+
+                input#name.form-control(type='text',value=pizza.NroPizz name='NroPizz' disabled="disabled")
+                input#name.form-control(type='hidden',value=pizza.NroPizz name='NroPizz')
+
+                label(for='nompizza') Nom Pizza :
+                input#name.form-control(type='text',value=pizza.DesignPizz name='DesignPizz')
+
+                label(for='prixpizza') Prix :
+                input#name.form-control(type='text',value=pizza.TarifPizz name='TarifPizz')
+                br
+                button.btn.btn-primary(type='submit') Save
+                br
+
+
+
+

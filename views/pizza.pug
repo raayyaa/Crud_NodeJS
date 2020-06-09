@@ -1,0 +1,22 @@
+extends layout
+
+block content
+    h1= title
+    p Welcome to #{title}
+
+    a(href='/pizza/add/')
+        button.btn.btn-primary(type='button') Create
+
+        each pizza in tablopizza
+            div.form-group
+                label(for='name') Nom pizza:
+                input#name.form-control(type='text', placeholder=pizza.DesignPizz name='namepizza')
+
+                label(for='name') Prix :
+                input#name.form-control(type='text', placeholder=pizza.TarifPizz name='prixpizza')
+
+                a(href='/pizza/del/' + pizza.NroPizz)
+                    button.btn.btn-primary(type='button') Del
+
+                a(href='/pizza/edit'+pizza.NroPizz)
+                    button.btn.btn-primary(type='button') Edit

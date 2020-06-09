@@ -1,0 +1,35 @@
+extends layout
+
+block content
+    h1= title
+    p Welcome bootstrapp pizza to #{title}
+        div.main.container
+
+        a(href='/pizza/add')
+            button.btn.btn-primary(type='button') Create
+        br
+        each pizza in tablopizza
+            div.col-md-6.marg.bg-primary.bord
+                div.col-md-5
+                    br
+                    label(for='namepizza') Nom pizza :
+                    input#name.form-control(type='text', placeholder= pizza.DesignPizz name='namepizza')
+                    br
+                    label(for='prixpizza') Prix :
+                    input#name.form-control(type='text', placeholder= pizza.TarifPizz name='prixpizza')
+                    br
+                    br
+                    a(href='/pizza/del/' + pizza.NroPizz)
+                        button.btn.btn-primary(type='button') Del
+
+                    a(href='/pizza/update/' + pizza.NroPizz )
+                            button.btn.btn-primary(type='button') Modifier
+
+                    a(href='/pizza/'+pizza.NroPizz)
+                        button.btn.btn-primary(type='button') Edit
+
+                    div.col-md-7
+                    br
+                    label  Photo pizza : #{pizza.NroPizz}.jpg
+                    div.col-md-12
+                        img.image(src='/images/' + pizza.NroPizz +'.jpg'  ).img1.thumbnail
